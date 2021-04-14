@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.room.Room
+import com.pigeoff.devpal.DevpalApplication
 import com.pigeoff.devpal.R
 import com.pigeoff.devpal.database.mDatabase
 import com.pigeoff.devpal.database.mDatabaseIssue
@@ -53,10 +54,8 @@ class UtilMain {
 
     //DB
     fun build(context: Context) : mDatabase {
-        return Room.databaseBuilder(
-            context,
-            com.pigeoff.devpal.database.mDatabase::class.java, DATABASE_NAME
-        ).allowMainThreadQueries().build()
+        val app = context.applicationContext as DevpalApplication
+        return app.getDatabase()
     }
 
     fun getIssuesOfParent(db: mDatabase, parent: Int) : MutableList<mDatabaseIssue> {

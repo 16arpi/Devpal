@@ -36,6 +36,7 @@ class ProjectActivity : AppCompatActivity() {
         binding = ActivityProjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.projectAppBar)
+
         db = UtilMain().build(this)
 
         projectId = this.intent.getIntExtra(UtilMain().ISSUE_ID, UtilMain().ISSUE_NO_ID)
