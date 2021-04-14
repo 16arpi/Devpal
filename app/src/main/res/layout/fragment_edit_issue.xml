@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar2"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
+        app:menu="@menu/menu_edit_project"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextColor="@color/colorPrimary"
+        android:elevation="0dp"/>
+
+    <EditText
+        android:id="@+id/editTitre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="@string/label_title"
+        android:inputType="textMultiLine|textPersonName|textCapSentences"
+        android:padding="16dp"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/label_description"
+        android:inputType="textMultiLine|textCapSentences"
+        android:padding="16dp"
+        android:textSize="18sp" />
+</LinearLayout>

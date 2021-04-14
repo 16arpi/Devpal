@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_label"
+        android:title="@string/label_status"
+        android:icon="@drawable/ic_label"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_add"
+        android:title="@string/label_add"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="always"/>
+
+
+    <item
+        android:id="@+id/action_edit"
+        android:title="@string/label_edit"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_delete"
+        android:title="@string/label_delete"
+        app:showAsAction="never"/>
+</menu>

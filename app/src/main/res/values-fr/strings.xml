@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Blåhaj</string>
+    <string name="label_project">Projet</string>
+    <string name="label_projects">Projets</string>
+    <string name="label_project_info">Détails</string>
+    <string name="label_project_bugs">Bugs</string>
+    <string name="label_project_enhance">Améliorations</string>
+    <string name="label_add">Ajouter</string>
+    <string name="label_title">Titre</string>
+    <string name="label_description">Description</string>
+    <string name="message_notitle">Merci d\'insérer au moins un titre</string>
+    <string name="label_edit">Editer</string>
+    <string name="label_add_issue">Ajouter un problème</string>
+    <string name="label_delete">Supprimer</string>
+    <string name="label_project_s">Projet(s)</string>
+    <string name="label_to_do">À faire</string>
+    <string name="label_idea">Idée</string>
+    <string name="label_in_progress">En cours</string>
+    <string name="label_done">Fait</string>
+    <string name="label_abandoned">Abandonné</string>
+    <string name="label_bugs">Bugs</string>
+    <string name="label_enhance">Améliorations</string>
+    <string name="label_solutions">Solutions</string>
+    <string name="label_status">Statut</string>
+    <string name="prompt_delete">Êtes-vous certain·e de vouloir supprimer ceci ?</string>
+    <string name="prompt_ok">Confirmer</string>
+    <string name="prompt_cancel">Annuler</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
