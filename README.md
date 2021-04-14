@@ -1,3 +1,3 @@
 # Devpal
 
-App android pour aider les développeur à suivre leurs bugs
+App android pour aider les développeur-euses à suivre leurs bugs
