@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.pigeoff.devpal.DevpalApplication
 import com.pigeoff.devpal.R
 import com.pigeoff.devpal.adapters.IssueAdapter
 import com.pigeoff.devpal.callbacks.TaskDragDropCallback
@@ -21,10 +22,10 @@ import kotlinx.android.synthetic.main.activity_project_issues.view.*
 /**
  * A simple [Fragment] subclass.
  */
-class ProjectEnhanceFragment(parent: Int, db: mDatabase) : Fragment() {
+class ProjectEnhanceFragment() : Fragment() {
 
-    private val parent = parent
-    private val db = db
+    private var parent = UtilMain().ISSUE_NO_PARENT
+    private lateinit var db: mDatabase
     private lateinit var recyclerView: RecyclerView
     private lateinit var mAdapter: IssueAdapter
     private lateinit var topLabel: TextView
@@ -33,6 +34,12 @@ class ProjectEnhanceFragment(parent: Int, db: mDatabase) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val p = arguments?.getInt(UtilMain().BUNDLE_ISSUE_PARENT, UtilMain().ISSUE_NO_PARENT)
+        if (p != null) parent = p
+
+        val app = requireActivity().application as DevpalApplication
+        db = app.getDatabase()
+
         return inflater.inflate(R.layout.activity_project_issues, container, false)
     }
 

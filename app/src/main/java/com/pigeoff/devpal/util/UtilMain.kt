@@ -37,6 +37,12 @@ class UtilMain {
     val ISSUE_TYPE_ENHANCE: Int = 2
     val ISSUE_TYPE_SOLUTION: Int = 3
 
+    // Identifiers
+    val BUNDLE_ISSUE_ID = "bundleissueid"
+    val BUNDLE_ISSUE_PARENT = "bundleissueparent"
+    val BUNDLE_ISSUE_TYPE = "bundleissuetype"
+    val BUNDLE_PROJET_ID = "bundleprojectid"
+
     //Codes
     val REQUEST_CODE = 1871
 

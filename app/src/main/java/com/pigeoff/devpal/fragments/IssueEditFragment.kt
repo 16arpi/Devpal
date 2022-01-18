@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import com.pigeoff.devpal.DevpalApplication
 import com.pigeoff.devpal.R
+import com.pigeoff.devpal.activities.IssueEditActivity
 import com.pigeoff.devpal.database.mDatabase
 import com.pigeoff.devpal.database.mDatabaseIssue
 import com.pigeoff.devpal.util.UtilIssueUI
@@ -15,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_edit_project.view.*
 /**
  * A simple [Fragment] subclass.
  */
-class IssueEditFragment(db: mDatabase, issueId: Int, issueParent: Int, issueType: Int) : Fragment() {
+class IssueEditFragment() : Fragment() {
 
     /*
         Il est nécessaire de récupérer 4 variables
@@ -25,16 +27,28 @@ class IssueEditFragment(db: mDatabase, issueId: Int, issueParent: Int, issueType
         - INTENT_ISSUE_ID : id de l'issue à modifier SI et SEULEMENT SI ISSUE_EDIT_ACTION = true
      */
 
-    private val db = db
-    private val issueId: Int = issueId
-    private val issueParent: Int = issueParent
-    private val issueType: Int = issueType
+    private lateinit var db: mDatabase
     private var issue = mDatabaseIssue()
+    private var issueId: Int = UtilMain().ISSUE_NO_ID
+    private var issueParent: Int = UtilMain().ISSUE_NO_PARENT
+    private var issueType: Int = UtilMain().ISSUE_TYPE_PROJECT
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val id = arguments?.getInt(UtilMain().BUNDLE_ISSUE_ID, UtilMain().ISSUE_NO_ID)
+        if (id != null) issueId = id
+
+        val parent = arguments?.getInt(UtilMain().BUNDLE_ISSUE_PARENT, UtilMain().ISSUE_NO_PARENT)
+        if (parent != null) issueParent = parent
+
+        val type = arguments?.getInt(UtilMain().BUNDLE_ISSUE_TYPE, UtilMain().ISSUE_TYPE_PROJECT)
+        if (type != null) issueType = type
+
+        val app = requireActivity().application as DevpalApplication
+        db = app.getDatabase()
+
         return inflater.inflate(R.layout.fragment_edit_issue, container, false)
     }
 

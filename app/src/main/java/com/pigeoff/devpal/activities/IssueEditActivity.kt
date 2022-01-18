@@ -24,7 +24,12 @@ class IssueEditActivity : AppCompatActivity() {
         val issueParent = intent.getIntExtra(UtilMain().ISSUE_PARENT_ID, UtilMain().ISSUE_NO_PARENT)
         val issueType = intent.getIntExtra(UtilMain().ISSUE_TYPE, UtilMain().ISSUE_TYPE_PROJECT)
 
-        val editProjectFragment = IssueEditFragment(db, issueId, issueParent, issueType)
+        val editProjectFragment = IssueEditFragment()
+        val editProjectFragmentBundle = Bundle()
+        editProjectFragmentBundle.putInt(UtilMain().BUNDLE_ISSUE_ID, issueId)
+        editProjectFragmentBundle.putInt(UtilMain().BUNDLE_ISSUE_PARENT, issueParent)
+        editProjectFragmentBundle.putInt(UtilMain().BUNDLE_ISSUE_TYPE, issueType)
+        editProjectFragment.arguments = editProjectFragmentBundle
 
         supportFragmentManager.beginTransaction()
             .replace(android.R.id.content, editProjectFragment)

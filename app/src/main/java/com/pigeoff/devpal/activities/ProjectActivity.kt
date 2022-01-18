@@ -46,8 +46,16 @@ class ProjectActivity : AppCompatActivity() {
             supportActionBar?.title = project.title
 
             //val infosFragment = ProjectInfosFragment(projectId, db)
-            val bugsFragment = ProjectBugsFragment(projectId, db)
-            val enhanceFragment = ProjectEnhanceFragment(projectId, db)
+            val bugsFragment = ProjectBugsFragment()
+            val bugsFragmentBundle = Bundle()
+            bugsFragmentBundle.putInt(UtilMain().BUNDLE_ISSUE_PARENT, projectId)
+            bugsFragment.arguments = bugsFragmentBundle
+
+            val enhanceFragment = ProjectEnhanceFragment()
+            val enhanceFragmentBundle = Bundle()
+            enhanceFragmentBundle.putInt(UtilMain().BUNDLE_ISSUE_PARENT, projectId)
+            enhanceFragment.arguments = enhanceFragmentBundle
+
             val tabsData = mutableListOf(bugsFragment, enhanceFragment)
 
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
